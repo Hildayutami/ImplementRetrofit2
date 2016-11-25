@@ -1,4 +1,4 @@
-package com.hld.retrofit2;
+package com.hld.retrofit2.ui.login;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -6,6 +6,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.hld.retrofit2.R;
 
 public class LoginActivity extends AppCompatActivity {
     private Button loginButton;
