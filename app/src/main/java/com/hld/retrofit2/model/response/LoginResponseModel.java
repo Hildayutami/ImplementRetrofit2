@@ -10,6 +10,7 @@ public class LoginResponseModel {
     @SerializedName("error") private boolean error;
     @SerializedName("token") private String token;
     @SerializedName("roles") private String roles;
+    @SerializedName("messge") private String message;
 
     public boolean isError() {
         return error;
@@ -33,5 +34,13 @@ public class LoginResponseModel {
 
     public void setRoles(String roles) {
         this.roles = roles;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
     }
 }

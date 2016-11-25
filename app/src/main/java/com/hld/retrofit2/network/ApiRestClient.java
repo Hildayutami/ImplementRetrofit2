@@ -4,6 +4,7 @@ import android.content.Context;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.hld.retrofit2.BuildConfig;
 
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
@@ -18,6 +19,7 @@ public class ApiRestClient {
     private ApiInterface apiInterface;
 
     public ApiRestClient(Context context){
+        //
         HttpLoggingInterceptor httpLoggingInterceptor = new HttpLoggingInterceptor();
         httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
         OkHttpClient okHttpClient = new OkHttpClient.Builder()
@@ -25,12 +27,13 @@ public class ApiRestClient {
                 .build();
 
         Retrofit retrofit= new Retrofit.Builder()
+                .baseUrl(BuildConfig.NEWS_URL)
                 .addConverterFactory(GsonConverterFactory.create(new Gson()))
                 .client(okHttpClient)
                 .build();
 
         apiInterface = retrofit.create(ApiInterface.class);
-        
+
     }
 
     public ApiInterface getService(){
